@@ -1,0 +1,19 @@
+{
+  "name": "testconf_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Slobodan Stojanovic <slobodan@cloudhorizon.com> (http://slobodan.me/)",
+  "license": "MIT",
+  "dependencies": {
+    "claudia-bot-builder": "git+https://github.com/claudiajs/claudia-bot-builder.git#feat/telegram-message-builder",
+    "huh": "^1.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^3.5.0",
+    "eslint-config-defaults": "^9.0.0"
+  }
+}
