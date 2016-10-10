@@ -10,13 +10,13 @@ module.exports =  botBuilder(message => {
     return [
       'Welcome to HolyJS conference :) \n',
       new telegramTemplate.Text(`I am *Igor*, your chatbot friend. You can ask me anything related to the conference!\n\nI'm still not that smart, so check http://holyjs.ru if you have any questions that I can't answer 😉`)
-        .addReplyKeyboard([['Schedule'], ['Current talk info'], ['Next talk info'], ['Info']], true, true)
+        .addReplyKeyboard([['Schedule'], ['Current talk info'], ['Next talk info'], ['Info'], ['Help']], true, true)
         .get()
     ]
 
   if (message.text.toLowerCase() === 'schedule' || message.text === '/schedule')
     return new telegramTemplate.Text(`There's a lot of the things going on, what do you want to see?`)
-      .addReplyKeyboard([['Track 1', 'Track 2'], ['Track 3', 'All tracks']], true, true)
+      .addReplyKeyboard([['Track 1', 'Track 2'], ['Track 3', 'All tracks'], ['Help'], ['Back to the main menu']], true, true)
       .get()
 
   function splitIntoChunks(arr, chunkSize) {
@@ -43,7 +43,7 @@ module.exports =  botBuilder(message => {
     return [
       new telegramTemplate.Text(`*Track ${trackNumber}*`).get(),
       new telegramTemplate.Text(text)
-        .addReplyKeyboard(splitIntoChunks(data.filter(item => item.type != 'break').map(item => item.id), 4), true, true)
+        .addReplyKeyboard(splitIntoChunks(data.filter(item => item.type != 'break').map(item => item.id), 4).concat([['Help'], ['Back to the main menu']]), true, true)
         .get(),
       'For a quick access to the talk info simply type or select an ID from the brackets'
     ]
@@ -62,14 +62,20 @@ module.exports =  botBuilder(message => {
       return prev
     }, '')
 
-    return new telegramTemplate.Text(text).get()
+    return new telegramTemplate.Text(text)
+      .addReplyKeyboard([['Help'], ['Back to the main menu']])
+      .get()
   }
 
   if (message.text.toLowerCase() === 'next talk info' || message.text === '/next-talk')
-    return new telegramTemplate.Text(`Next talk: ...`).get()
+    return new telegramTemplate.Text(`Next talk: ...`)
+      .addReplyKeyboard([['Help'], ['Back to the main menu']])
+      .get()
 
   if (message.text.toLowerCase() === 'current talk info' || message.text === '/current-talk')
-    return new telegramTemplate.Text(`Current talk: ...`).get()
+    return new telegramTemplate.Text(`Current talk: ...`)
+      .addReplyKeyboard([['Help'], ['Back to the main menu']])
+      .get()
 
   if (confData.schedule.map(item => item.id.toLowerCase()).indexOf(message.text.toLowerCase()) > -1) {
     const talk = confData.schedule.find(item => item.id.toLowerCase() === message.text.toLowerCase())
@@ -80,7 +86,7 @@ module.exports =  botBuilder(message => {
     reply += talk.track !== 'all' ? ` (Track ${talk.track})\n` : '\n'
     return [
       new telegramTemplate.Text(reply)
-        .addReplyKeyboard([[`About ${talk.speaker}`], [`Follow @${talk.twitter} on twitter`]], true, true)
+        .addReplyKeyboard([[`About ${talk.speaker}`], [`Follow @${talk.twitter} on twitter`], ['Help'], ['Back to the main menu']], true, true)
         .get(),
       talk.description
     ]
@@ -89,9 +95,24 @@ module.exports =  botBuilder(message => {
   if (message.text.toLowerCase() === 'info' || message.text === '/info')
     return [
       new telegramTemplate.Text(`*HolyJS*\n\nDecember 11, Moscow\nRadisson Slavyanskaya Hotel, Square of Europe, 2`).get(),
-      new telegramTemplate.Text(`There is plenty of frontend conferences held in Russia. However, before this year there weren’t any conferences on the most popular in the world (according to GitHub and RedMonk) programming language, JavaScript, which is mainly associated with frontend.\n\nWe fixed this bug, and now we have HolyJS Moscow, which is the second large-scale conference on JavaScript in 2016. More than 400 JS-developers will come together to discuss questions with JS-experts from all over the world.\n\nIt is guaranteed that all the talks will be on technical topics without any agile, scrum and team management stuff.`).get(),
+      new telegramTemplate.Text(`There is plenty of frontend conferences held in Russia. However, before this year there weren’t any conferences on the most popular in the world (according to GitHub and RedMonk) programming language, JavaScript, which is mainly associated with frontend.\n\nWe fixed this bug, and now we have HolyJS Moscow, which is the second large-scale conference on JavaScript in 2016. More than 400 JS-developers will come together to discuss questions with JS-experts from all over the world.\n\nIt is guaranteed that all the talks will be on technical topics without any agile, scrum and team management stuff.`)
+        .addInlineKeyboard([
+          [{
+            text: 'HolyJS on facebook',
+            url: 'https://www.facebook.com/holyjs/'
+          }],
+          [{
+            text: 'HolyJS on VKontakte',
+            url: 'http://vk.com/holyjs'
+          }],
+          [{
+            text: '@HolyJSconf on twitter',
+            url: 'https://twitter.com/HolyJSconf'
+          }]
+        ])
+        .get(),
       new telegramTemplate.Text(`The conference will include more than 20 technical talks spoken in parallel tracks, lots of new people and communication with colleagues. HolyJS is not only about frontend, it also touches backend, desktop, and other demanded topics of JavaScript world.`)
-        .addReplyKeyboard([['List of topics'], ['Website'], ['Location']], true, true)
+        .addReplyKeyboard([['List of topics'], ['Website'], ['Location'], ['Help'], ['Back to the main menu']], true, true)
         .get()
     ]
 
@@ -138,5 +159,24 @@ module.exports =  botBuilder(message => {
       new telegramTemplate.Location(55.741718, 37.566829).get()
     ]
 
-  return new telegramTemplate.Text(`Hmm, I can't answer that 🙁 \n*Reason*:\n${excuse.get()}`).get()
+  if (message.text.toLowerCase() === 'help'  || message.text === '/help')
+    return [
+      new telegramTemplate.Text(`Help text...`)
+        .addReplyKeyboard([['Schedule'], ['Current talk info'], ['Next talk info'], ['Info'], ['Help']], true, true)
+        .get()
+    ]
+
+  if (message.text.toLowerCase() === 'back to the main menu'  || message.text === 'main menu')
+    return [
+      new telegramTemplate.Text(`Here's a few things that I can help you with`)
+        .addReplyKeyboard([['Schedule'], ['Current talk info'], ['Next talk info'], ['Info'], ['Help']], true, true)
+        .get()
+    ]
+
+  return [
+    new telegramTemplate.Text(`Hmm, I can't answer that 🙁 \n*Reason*:\n${excuse.get()}`).get(),
+    new telegramTemplate.Text(`But here's a few things that I can help you with`)
+      .addReplyKeyboard([['Schedule'], ['Current talk info'], ['Next talk info'], ['Info'], ['Help']], true, true)
+      .get()
+  ]
 })
