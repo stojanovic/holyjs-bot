@@ -102,11 +102,13 @@ module.exports =  botBuilder(message => {
 
   if (/^About ([0-1a-zA-Z -]{1,100})$/i.test(message.text.toLowerCase())) {
     let name = message.text.toLowerCase().replace(/^About ([0-1a-zA-Z -]{1,100})$/i, '$1')
-    console.log('Name: ', name)
     let talk = confData.schedule.find(talk => talk.speaker && talk.speaker.toLowerCase() === name.toLowerCase())
-    console.log('Talk: ', talk)
     if (talk) {
-      return new telegramTemplate.Text(`*${talk.speaker}*\n\n${talk.aboutSpeaker}`).get()
+      let reply = [new telegramTemplate.Text(`*${talk.speaker}*`).get()]
+      if (talk.speakerPic)
+        reply.push(new telegramTemplate.Photo(talk.speakerPic).get())
+      reply.push(new telegramTemplate.Text(`${talk.aboutSpeaker}`).get())
+      return reply
     }
   }
 

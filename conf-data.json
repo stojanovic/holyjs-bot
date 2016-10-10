@@ -36,6 +36,7 @@
       "place": null,
       "description": "In this talk, Axel will give an overview of the latest features that were added to ECMAScript, the JavaScript language standard. He will also show what features will probably be added next.",
       "aboutSpeaker": "Axel Rauschmayer is a blogger (2ality.com), book author („Speaking JavaScript“, „Exploring ES6“, etc.), and trainer. He has been programming since 1985 and developing web applications since 1995.",
+      "speakerPic": "http://images.contentful.com/nn534z2fqr9f/1ZlplzVoTecSE2iwMK2gck/53f495a501ba9422ee75c1a0fffe8f3b/iFzELOBn.jpeg?w=250",
       "twitter": "rauschma"
     },
     {
@@ -62,6 +63,7 @@
       "place": "Зал 1",
       "description": "Here you are coding away, when you realize you are in desperate need of a quick shell script to get your project cleaned up. You are standing at a fork in the road: Bash or Node? You choose the road less travelled by (for some reason) — Node. Irina congratulates you on this decision. You have written it, you may have published it, and it certainly works. But what now? Is this all a command line module Node is good for: a project clean up and some data manipulation? Along with an audience, Irina is going to take a step further and make a command line module that's more than just your compiling script. Irina, of course, means making it more interactive. In this talk, she wants to take listeners on an adventure that will require cunning, bravery, and maybe some magic. Irina along with attendees will walk through obtaining and parsing data, using Node's process functions, and finally improving the module's user experience.",
       "aboutSpeaker": "tl;dr javascript, wombats and hot takes. Irina is a London via Vancouver software developer. She spends quite a bit of her time exploring the outdoors, gushing over trains, and reading some Beatniks.",
+      "speakerPic": "http://images.contentful.com/nn534z2fqr9f/32Ps6pruAEsOag6g88oSMa/c71710c584c7933020e4f96c2382427a/IMG_4618.JPG?w=250",
       "twitter": "_lrlna"
     },
     {
@@ -76,6 +78,7 @@
       "place": "Зал 2",
       "description": "Twitterati rules today's world of frontend: popularity equals life. On the one hand, this is good: you can write your own application without spending money and \"rock the world.\" And on the other hand — now the frontend world is like a line of the famous song: \"There are nine million bicycles ...\" Is it good or bad? That's what is going to be figured out. What is a life cycle of technology and is the world really ruled by secret backstage; do React developers really have the highest salaries? In what direction the frontend world goes? In this session, listeners of the talk will see the most interesting examples of frameworks and hear the answers to these and other questions.",
       "aboutSpeaker": "Dart + Angular 2 developer, speaker. For a long time Evgeny was engaged in .NET, Microsoft stack. He worked at Quest Software, then at Dell, where he began to engage in frontend. He went the way from CoffeeScript + Angular 1.0 to Dart + Angular 2.0. Currently Evgeny is working in Wrike (www.wrike.com), the heavy-duty SAAS application with a very rich client code. Wrike team writes on Dart and Angular 2.0 and aims to be up to date with modern trends in the Web world.",
+      "speakerPic": "http://images.contentful.com/nn534z2fqr9f/5rSybXiLqoQEiOMiWcoqCI/958c2ba2175520ae1358398bad9aa9b5/gusev_2x.jpg?w=250",
       "twitter": "bunopus"
     },
     {
@@ -90,6 +93,7 @@
       "place": "Зал 3",
       "description": "🙀",
       "aboutSpeaker": "Lead frontend developer in Evil Martians. Author of Autoprefixer and PostCSS.",
+      "speakerPic": "http://images.contentful.com/nn534z2fqr9f/5onzmDfznaaaQmuyykEEcI/fa4851b5369cb860bf3b49b447afaa79/rgHKEj8svhA.jpg?w=250",
       "twitter": "andrey_sitnik"
     },
     {
@@ -116,6 +120,7 @@
       "place": "Зал 1",
       "description": "This session is about the curiosity that drives us forward. It focuses on the new possibilities of JavaScript and how creative coders are using them. Which are the core elements of the language? What happens, if we reduce them to the minimum? And how can we puzzle them together, in the most unexpected way?",
       "aboutSpeaker": "Martin is a Head of development at Ubilabs, involved in the JSUnconf, organizer of HHJS and Google Developer Expert for the Google Maps API. He is the maniac who codes with Asian characters only, built a spinning globe in 1K of JavaScript, wrote invisible code, set up JSFuck.com and hacked Tetris in less than 140 bytes. As an active speaker at conferences all over the world, he loves to share his latest insights with the community.",
+      "speakerPic": "http://images.contentful.com/nn534z2fqr9f/F2VHDm7RFQkW6QAcWSiOC/3aa26a46b69f5b7d94b9d7b4720c8ad5/ascii.png?w=250",
       "twitter": "aemkei"
     },
     {
@@ -144,6 +149,7 @@
       "place": "Зал 3",
       "description": "This talk will cover the most common sources of performance issues in Node.js applications. It will introduce the audience to the basic tools needed for debugging performance problems in Node.js. Thomas will focus on how to measure performance and how to know exactly where to spend your time so you don’t waste time debugging the wrong things. After the basics are covered, along with an audience, Thomas will go through the most common performance issues and bottlenecks and learn how to solve them.",
       "aboutSpeaker": "Thomas Watson is an open source Node.js hacker out of Copenhagen, Denmark. He is a member of the Node.js Diagnostics Working Group and is the Node.js Lead at Opbeat — a JavaScript performance analysis and monitoring startup. He maintains over a 100 open source projects, enjoys working with mad science and implementing network protocols in JavaScript.",
+      "speakerPic": "http://images.contentful.com/nn534z2fqr9f/4EljIotZWwSgWi8acqYa0u/7309d0df10ec07ec2e0f0c7b325841d5/thomas.jpg?w=250",
       "twitter": "wa7son"
     },
     {
@@ -170,6 +176,7 @@
       "place": "Зал 1",
       "description": "Today's Web \"pages\" increasingly turn into complex web apps with lots of code, data and other resources (styles, pics, you name it). For such an app, how can we deal with code versioning, updates, caching (appcache, service workers, zeit.co)? Google plans to modularize mobile apps (instant apps) to be lightweight like Web pages. Meanwhile, a Web page utilizing a couple frameworks looks as lightweight as a hippo. What kind of technology can sync code as well as data? Both code and data may reside in browser's memory, browser-side cache, network cache, CDN, on a prod server, staging server or a developer's own dear laptop. How can we modularize a Web app and deal with components flexibly? How can we version and update them? I will report on my experiments that may (or may not) give us some leads in answering that many questions.",
       "aboutSpeaker": "Victor graduated from the mathematics and mechanics faculty of USU. He worked at the Bank of Russia, Yandex, TU Delft. Currently he is engaged in data synchronization and own project Swarm.",
+      "speakerPic": "http://images.contentful.com/nn534z2fqr9f/1cTkNAqbzI2Ikmcmagekoy/fd8d28ee71d48e8bb86a192a671b7bd2/SeXd2JecO2o.jpg?w=250",
       "twitter": "gritzko"
     },
     {
@@ -184,6 +191,7 @@
       "place": "Зал 2",
       "description": "Virtual Reality is upon us: Oculus Rift, HTC Vive, Samsung Gear and Google Cardboard are just a few of the available options to dive into virtual environments. The web as the most low-barrier option for sharing and exploring content shall not lack behind and luckily thanks to WebGL and WebVR we have standards to unlock this new universe as well, using web technologies. This talk shows how you can start exploring this new world using JavaScript and what challenges, what new possibilities and what new developments you can get from it.",
       "aboutSpeaker": "Martin is open source contributor and web evangelist by heart from Zurich with a decade experience from the trenches of software engineering in multiple fields. He works as a software engineer at Archilogic in front- and backend. He devotes his time to moving the web forward, fixing problems, building applications and systems and breaking things for fun & profit. Martin believes in the web platform and is working with bleeding edge technologies that will allow the web to prosper.",
+      "speakerPic": "http://images.contentful.com/nn534z2fqr9f/3dYKhu78BiySe6M4KsGKE0/35c6ab88581b459ed1d9b60911f39d3f/Martin-Naumann-Color.jpg?w=250",
       "twitter": "g33konaut"
     },
     {
@@ -198,6 +206,7 @@
       "place": "Зал 3",
       "description": "Ensuring bug-free code in JavaScript is challenging, even when devoting considerable resources to testing, and this is partially due to fundamental elements of the JavaScript language design. As an alternative to JavaScript, the Elm language alleviates these issues by incorporating the essence of libraries like React and Redux while adding the advantages of pure functional programming and type inference. This results in code with increased reliability and maintainability, and furthermore yields an improved developer experience. Using own experience from months of building real world components, Tereza will explain why Elm’s design guides you towards well-architectured apps, sharing code and insights, so you can get an impression of the Elm life, while arming you for the gotchas you may encounter in the quest to make your life one too.",
       "aboutSpeaker": "Tereza grew up playing around with the Commodore 64 and IBM’s System. She is learning various currently dead languages, and yet the experience provided her with a solid understanding of programming languages and development. Later Tereza began working in web-development professionally mainly building large scale apps using React and friends. After years of experience, the reoccurring, rather silly, yet aggravating frustrations which come with developing in JavaScript had her looking for alternatives, especially within functional languages. This is where Tereza learned of Elm and since then she has been dedicated to its technical development as well as expanding its community.",
+      "speakerPic": "http://images.contentful.com/nn534z2fqr9f/2EF9FYpwZmCgkGsE4YyMU0/6e1f0916c096bfb77d08e401cba5cb78/1475164327_tmp_tereza__1_.jpg?w=250",
       "twitter": "terexka"
     },
     {
@@ -238,6 +247,7 @@
       "place": "Зал 2",
       "description": "Do you care about performance? Memory leaks, megamorphic cache misses, garbage collection jank, and deoptimizations can slow your app down. Along with attendees of the talk, Franziska will dive deep into the inner workings of V8, Chrome's JavaScript engine, to better understand what these terms mean. V8 ships with its own profiling tools that can identify such problems. Listeners will be able to learn to use them to identify and fix low-level JavaScript performance issues.",
       "aboutSpeaker": "Franziska Hinkelmann is a software engineer at Google Germany. She works on the Chrome V8 team, focusing on everything related to Node.js. She also regularly teaches Node.js courses at the International Summer University for Women in Informatics at the University of Bremen. Franziska was previously organizer of the PHP User Group Munich.",
+      "speakerPic": "http://images.contentful.com/nn534z2fqr9f/7feR75UxfG4kEMeY8o4kiG/5ac789e58ca02c7c73a876891a483d5a/ZnNN9qes.jpg?w=250",
       "twitter": "fhinkel"
     },
     {
@@ -278,6 +288,7 @@
       "place": "Зал 1",
       "description": "Rich text editing is super hard. Many developers nowadays don't build rich text experiences and if they do they are very limited. This is because rich text editing is inherently hard and features like the HTML attribute contenteditable are broken. Only few companies like Medium provide a solid solution, but they never open sourced it. Draft.js was released earlier this year and is a rich text editing framework that fixes contenteditable and syncs the DOM to a immutable data-structure. This allows you to control the rendering with React components as well as manipulating the content in nice and sane way. In the talk Nik will explain how the data-structure works and show how decorators, block renderers and style-maps can be used to create features like @-mentions, drag & drop images, linkify or hashtags and combine them in one editor.",
       "aboutSpeaker": "Nik is a developer with heavy focus on UX. He co-created several popular open source projects like DraftJS Plugins & Carte Blanche and earlier this year Nik participated in Stripe’s Open Source Retreat. He organises the ReactJS Vienna Meet-up and recently joined the startup Serverless.",
+      "speakerPic": "http://images.contentful.com/nn534z2fqr9f/4Za3Bjsb5uuq4UKsMmqWKi/29363629e7ef43e57b59d2b23a00fa41/nikgraf.jpg?w=250",
       "twitter": "nikgraf"
     },
     {
@@ -306,6 +317,7 @@
       "place": "Зал 3",
       "description": "Max and listeners will examine the benefits of offline web applications, before jumping straight in and looking at AppCache and ServiceWorker. This talk is perfect for any developer with web development experience, as every website can be taken offline. It will be especially beneficial for single-page application developers, seeing as making those offline compatible is very easy.",
       "aboutSpeaker": "Max is an Open Source Developer at Thinkmill, where he takes care of KeystoneJS and ElementalUI. He’s also the creator of react-boilerplate, the co-creator of Carte Blanche and he co-organises the React.js Vienna Meetup. He loves to travel, brews rad coffee, skies beautiful mountains and skates through the city.",
+      "speakerPic": "http://images.contentful.com/nn534z2fqr9f/68WDeATarmkouEAIeAiQYE/0bbd47a005dc429a863e7dfad71d7778/headshot.jpeg?w=250",
       "twitter": "mxstbr"
     },
     {
@@ -332,6 +344,7 @@
       "place": "Зал 1",
       "description": "Mathias will talk about his latest project — fully open source, 100% P2P implementation of a modular \"dropbox\" written in Javascript. A shared folder where multiple people can share files with each other by simple dropping them, no matter how large. Mathias will tell about the technical aspects of this and make a bunch of demos. In addition, he'll show the implications of this for modern data science workflows.",
       "aboutSpeaker": "Mathias is a non-profit Node.js hacker based in Copenhagen, Denmark. He works full time on open source and in the Dat project, http://dat-data.com trying to build open tools to help scientists share datasets. Currently he maintains more than 400 modules on npm including a bunch of P2P and mad science stuff.",
+      "speakerPic": "http://images.contentful.com/nn534z2fqr9f/MvIN48XH6SQ4Egm0MYs0M/330bff2e7d63b137a29f0184918d3137/376661.png?w=250",
       "twitter": "mafintosh"
     },
     {
