@@ -9,7 +9,7 @@
   "author": "Slobodan Stojanovic <slobodan@cloudhorizon.com> (http://slobodan.me/)",
   "license": "MIT",
   "dependencies": {
-    "claudia-bot-builder": "git+https://github.com/claudiajs/claudia-bot-builder.git#feat/telegram-message-builder",
+    "claudia-bot-builder": "^2.1.0",
     "huh": "^1.1.4"
   },
   "devDependencies": {
