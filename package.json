@@ -15,5 +15,8 @@
   "devDependencies": {
     "eslint": "^3.5.0",
     "eslint-config-defaults": "^9.0.0"
+  },
+  "optionalDependencies": {
+    "aws-sdk": "^2.7.7"
   }
 }
