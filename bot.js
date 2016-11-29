@@ -51,5 +51,6 @@ const api = botBuilder((message, originalApiRequest) => {
 })
 
 api.addPostDeployConfig('dynamoDbTable', 'DynamoDB table name:', 'configure-bot')
+api.addPostDeployConfig('apiAiToken', 'API.ai token:', 'configure-bot')
 
 module.exports = api
