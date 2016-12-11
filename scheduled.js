@@ -19,12 +19,12 @@ exports.handler = function(event, context) {
 
   let nextEn = confData.en.schedule
     .filter(talk => {
-      return moment(new Date()).add(2, 'hours').isSameOrAfter(moment(talk.fullStartTime).subtract(10, 'minutes')) && moment(new Date()).add(2, 'hours').isBefore(moment(talk.fullStartTime).subtract(5, 'minutes')) && talk.type !== 'break'
+      return moment(new Date()).add(3, 'hours').isSameOrAfter(moment(talk.fullStartTime).subtract(10, 'minutes')) && moment(new Date()).add(3, 'hours').isBefore(moment(talk.fullStartTime).subtract(5, 'minutes')) && talk.type !== 'break'
     })
 
   let nextRu = confData.ru.schedule
     .filter(talk => {
-      return moment(new Date()).sub(2, 'hours').isSameOrAfter(moment(talk.fullStartTime).subtract(10, 'minutes')) && moment(new Date()).add(2, 'hours').isBefore(moment(talk.fullStartTime).subtract(5, 'minutes')) && talk.type !== 'break'
+      return moment(new Date()).add(3, 'hours').isSameOrAfter(moment(talk.fullStartTime).subtract(10, 'minutes')) && moment(new Date()).add(3, 'hours').isBefore(moment(talk.fullStartTime).subtract(5, 'minutes')) && talk.type !== 'break'
     })
 
   if (!nextEn.length)
@@ -44,10 +44,14 @@ exports.handler = function(event, context) {
           originalRequest: {}
         }, mainMenu({
           en: nextEn.reduce((msg, talk) => {
-            return msg + `Track ${talk.track}\n"${talk.title}" by ${talk.speaker}\n\n`
+            let track = talk.track !== 'all' ? `Track ${talk.track}\n` : ''
+            let speaker = talk.speaker ? ` by ${talk.speaker}\n\n` : ''
+            return msg + track + `"${talk.title}"` + speaker
           }, `Hey, next talk is a less than 10 minutes!\n\n`),
           ru: nextRu.reduce((msg, talk) => {
-            return msg + `Трек ${talk.track}\n"${talk.title}" от ${talk.speaker}\n\n`
+            let track = talk.track !== 'all' ? `Трек ${talk.track}\n` : ''
+            let speaker = talk.speaker ? ` от ${talk.speaker}\n\n` : ''
+            return msg + track + `"${talk.title}"` + speaker
           }, `Привет, следующий доклады будем меньше чем через 10 минут!\n\n`)
         }, user.lang), event.token)
       }))

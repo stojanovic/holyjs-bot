@@ -2,3 +2,4 @@ node_modules
 claudia.json
 claudia-scheduled.json
 .DS_Store
+claudia-test.json

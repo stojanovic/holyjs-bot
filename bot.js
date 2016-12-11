@@ -42,12 +42,24 @@ function getLanguage(id, table) {
 }
 
 const api = botBuilder((message, originalApiRequest) => {
+  console.log(message)
   return getLanguage(message.sender, originalApiRequest.env.dynamoDbTable)
     .then(lang => {
+      console.log(lang)
       return botFlow(message, lang, originalApiRequest.env, docClient)
     })
+    .catch(console.log)
 }, {
   platforms: ['telegram']
+})
+
+api.get('/tweet', request => {
+  let url = `twitter://post?message=%23holyjs%20`
+  if (typeof request.queryString === 'object' && request.queryString.speaker)
+    url += `%40${request.queryString.speaker}%20`
+  return url
+}, {
+  success: 302
 })
 
 api.addPostDeployConfig('dynamoDbTable', 'DynamoDB table name:', 'configure-bot')
