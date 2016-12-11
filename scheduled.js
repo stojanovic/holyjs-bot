@@ -49,10 +49,10 @@ exports.handler = function(event, context) {
             return msg + track + `"${talk.title}"` + speaker
           }, `Hey, next talk is a less than 10 minutes!\n\n`),
           ru: nextRu.reduce((msg, talk) => {
-            let track = talk.track !== 'all' ? `Трек ${talk.track}\n` : ''
+            let track = talk.track !== 'all' ? `Доклад ${talk.track}\n` : ''
             let speaker = talk.speaker ? ` от ${talk.speaker}\n\n` : ''
             return msg + track + `"${talk.title}"` + speaker
-          }, `Привет, следующий доклады будем меньше чем через 10 минут!\n\n`)
+          }, `Привет, до следующего доклада остаётся менее 10 минут!\n\n`)
         }, user.lang), event.token)
       }))
     })
